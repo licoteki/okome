@@ -1,0 +1,3 @@
+[submodule "okome_backend"]
+	path = okome_backend
+	url = git@github.com:licoteki/okome_backend.git

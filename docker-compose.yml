@@ -1,0 +1,18 @@
+version: '3'
+services:
+  backend:
+    build: ./okome_backend
+    container_name: okome_backend
+    working_dir: /app/okome_backend
+    tty: true
+  postgres:
+    image: postgres:latest
+    container_name: okome_db
+    environment:
+      POSTGRES_USER: okome
+      POSTGRES_PASSWORD: 'okome-password'
+      POSTGRES_DB: 'okome'
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./db/pgdata:/var/lib/postgresql/data
+      - ./db/log:/var/log
